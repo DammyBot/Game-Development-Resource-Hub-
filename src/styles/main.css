@@ -7,6 +7,7 @@
     --text-primary: "Montserrat", sans-serif;
     --text-secondary: "Poppins", sans-serif;
 
+    --text-xsmall: 12px;
     --text-small: 14px;
     --text-medium: 16px;
     --text-large: 18px;
@@ -24,13 +25,14 @@
 
 body {
     background-color: var(--bg-color);
+    overflow-x: hidden;
 }
 
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 20px;
 }
 
 .home {
@@ -69,11 +71,80 @@ nav {
 .explore {
     font-family: var(--text-primary);
     font-weight: bolder;
-    background-color: var(--secondary-accent);
-    color: var(--text-color);
+    background-color: var(--text-color);
+    color: var(--bg-color);
     padding: 20px 10px;
     border-radius: 10px;
     font-size: 11px;
+}
+
+h2 {
+    text-align: center;
+    color: var(--text-color);
+    font-family: var(--text-primary);
+    font-weight: bolder;
+    font-size: var(--text-large);
+    padding: 42px;
+}
+
+.content {
+    padding: 10px;
+}
+
+#about,
+#resource {
+    display: flex;
+    gap: 24px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#about div,
+#resource div {
+    padding: 5px;
+    min-width: 230px;
+    height: 157px;
+    background-color: var(--primary-accent);
+    border-radius: 15px;
+    margin: auto;
+}
+
+#about div h3,
+#resource div h3 {
+    text-align: center;
+    color: var(--text-color);
+    font-family: var(--text-primary);
+    font-size: var(--text-medium);
+    padding: 5px;
+}
+
+#about div p,
+#resource div p {
+    font-family: var(--text-secondary);
+    color: white;
+    font-size: var(--text-small);
+    text-align: center;
+    font-weight: 400;
+    line-height: 150%;
+    padding: 5px;
+}
+
+#resource div a {
+    font-family: var(--text-primary);
+    font-weight: bolder;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    padding: 10px;
+    border-radius: 10px;
+    font-size: var(--text-xsmall);
+    margin: auto;
+    display: block;
+    text-align: center;
+    border: 1px solid black;
 }
 
 @media screen and (min-width: 36rem) {
@@ -89,7 +160,18 @@ nav {
     .home {
         width: 150px;
     }
+
     .explore {
         font-size: var(--text-small);
+    }
+
+    h2 {
+        font-size: var(--text-xlarge);
+    }
+
+    #about div,
+    #resource div {
+        min-width: 292px;
+        height: 258px;
     }
 }
